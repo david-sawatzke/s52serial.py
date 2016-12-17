@@ -1,0 +1,25 @@
+* A Serial Programmer for the AT89S52
+Licensed under GPLv3
+
+Uses Python 3
+** Needed Hardware
+- [[https://github.com/bvernoux/hydrabus][Hydrabus]] (Similar to BusPirate, probably very simple to adapt)
+** Wiring
+- Connect Vcc to 5V and GND to GND (duh)
+- Connect SPI, MOSI and MISO between the chip and the Hydrabus
+- The AT89S52 needs a clock, so connect an oscillator to XTAL1 and XTAL2
+- The reset pin needs 0.7 * Vcc, so connect it to a pullup to 5V and a diode to
+  CS, so when the CS Pin is 0V, the Reset Pin is under 1V. This may not work all
+  the time, use a transistor or something similar in that case
+** Gotchas
+- The hex parser is very basic, only usable for certain types of hex files, for
+  example the ones output by as31
+- No checking for the device
+- Some delays needed by hardware only provided by slowness of python
+- When something fails, the hydrabus may not be properly reset
+** TODO
+- Implement proper hex parsing
+  - Maybe use a library
+- Solve the problem of flash write waiting a bit nicer
+  - Currently, the programm only transfers one byte at a time
+- Check chip IDs
