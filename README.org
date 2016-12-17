@@ -17,7 +17,7 @@ Uses Python 3
 - No checking for the device
 - Some delays needed by hardware only provided by slowness of python
 - When something fails, the hydrabus may not be properly reset
-** TODO
+** To be done
 - Implement proper hex parsing
   - Maybe use a library
 - Solve the problem of flash write waiting a bit nicer
