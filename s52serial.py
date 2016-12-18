@@ -127,7 +127,7 @@ class HydraBus:
         self.ser.write(b'\x00')
         # Reset to console mode
         self.ser.write(b'\x0F\n')
-class Programmer():
+class Programmer:
     def __init__(self, hydrabus):
         self.hydrabus = hydrabus
         # Reset MCU
