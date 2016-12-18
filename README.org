@@ -4,6 +4,9 @@ Licensed under GPLv3
 Uses Python 3
 ** Needed Hardware
 - [[https://github.com/bvernoux/hydrabus][Hydrabus]] (Similar to BusPirate, probably very simple to adapt)
+** Dependencies
+- Python 3
+- PySerial
 ** Wiring
 - Connect Vcc to 5V and GND to GND (duh)
 - Connect SPI, MOSI and MISO between the chip and the Hydrabus
