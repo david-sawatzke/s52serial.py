@@ -150,7 +150,6 @@ class Programmer:
                                           0xFF, data]))
         # Just to be sure
         time.sleep(0.001)
-
     def read_sig_byte(self,addr):
         return self.hydrabus.transfer_spi(bytes([0x28, ((addr & 0xFF00) >> 8),
                                                  addr & 0xFF, 0x00]))[3]
